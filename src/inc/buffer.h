@@ -9,7 +9,7 @@ extern "C" {
 #include <stdint.h>
 
 typedef struct {
-    char *buffer;
+    uint8_t *buffer;
     uint16_t idxIn;
     uint16_t idxOut;
     uint16_t size;
@@ -21,7 +21,7 @@ typedef enum {
 } BufferErrorStatus_t;
 
 
-void BufferPut(char symbol, buffer_t *buf);
+void BufferPut(uint8_t symbol, buffer_t *buf);
 
 char BufferPop(buffer_t *buf);
 
@@ -31,7 +31,7 @@ char BufferShowSymbol(uint16_t symbolNumber, buffer_t *buf);
 
 void BufferClear(buffer_t *buf);
 
-BufferErrorStatus_t BufferInit(buffer_t *ring, char *buf, uint16_t size);
+BufferErrorStatus_t BufferInit(buffer_t *ring, uint8_t *buf, uint16_t size);
 
 uint16_t BufferCRC16ccitt(buffer_t *buf, uint16_t length, uint16_t position);
 

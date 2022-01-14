@@ -3,7 +3,7 @@
 ~~~ c
 #define BUFFER_SIZE 200
 
-Buffer_t buffer;
+buffer_t buffer;
 
 // init buffer
 char buf[BUFFER_SIZE] = {0};

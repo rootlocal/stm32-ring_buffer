@@ -1,6 +1,6 @@
-#include "buffer.h"
+#include "inc/buffer.h"
 
-void BufferPut(char symbol, buffer_t *buf) {
+void BufferPut(uint8_t symbol, buffer_t *buf) {
     buf->buffer[buf->idxIn++] = symbol;
 
     if (buf->idxIn >= buf->size) {
@@ -51,7 +51,7 @@ void BufferClear(buffer_t *buf) {
     buf->idxOut = 0;
 }
 
-BufferErrorStatus_t BufferInit(buffer_t *ring, char *buf, uint16_t size) {
+BufferErrorStatus_t BufferInit(buffer_t *ring, uint8_t *buf, uint16_t size) {
     ring->size = size;
     ring->buffer = buf;
     BufferClear(ring);
